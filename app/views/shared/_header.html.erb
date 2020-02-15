@@ -1,0 +1,27 @@
+<div class="header">
+	<% if current_user && current_user.admin %>
+  	<%= link_to "Admin Page", admin_categories_path %>
+  <% end %>
+
+  <div class="header-container main-container">
+    <div class="upper-container">
+      <div class="logo"> 
+        <%= image_tag "log3.png", class: "img-logo" %>
+      </div>
+      <div class="header-links">
+        <% if !user_signed_in? %>
+          <%= link_to "Log in", new_user_session_path, class: "log-in button-link" %>
+          <%= link_to "Sign up", new_user_registration_path, class: "sign-up button-link" %>
+        <% else %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"log-out button-link" %>
+          <%= link_to "My account", user_path(current_user), class: "account button-link" %>
+        <% end %>
+      </div>
+    </div>
+    <div class="header-lower">
+      <div class="header-search">
+        <input class="search" type="text" placeholder="Search your product">
+      </div>
+    </div>
+  </div>
+</div>

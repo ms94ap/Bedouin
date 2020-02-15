@@ -1,25 +1,62 @@
-<h2>Sign up</h2>
+<div class="outer-container">
+  <div class="inner-container">
+    <div class="main-form">
+      <div class="form">
+        <div class="signup-bar">Sign up with
+          <span class="plt-option">Facebook</span>
+            or
+          <span class="plt-option">Google</span>
+        </div>
+        <div class="alter-or">or</div>
+          <%# First Name & Last name to be added in the form once back end is ready %>
+        <%# <input type="text" class="form-input" placeholder="First Name"><br>
+        <input type="text" class="form-input" placeholder="Last Name"><br> %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+        <%# <div class="status-field">
+          <div class="inner-field"> Are you
+            <span class="options">
+              <input type="checkbox" class="check"><span style="padding-left: 10px;">Supplier</span>
+              <input type="checkbox" class="check"><span style="padding-left: 10px;">Buyer</span>
+              <input type="checkbox" class="check"><span style="padding-left: 10px;">Both</span>
+            </span>
+            <span>?</span>
+          </div>
+        </div> %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+        <%= form_for(resource, as: resource_name, html:{class:"new-user"}, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <div class="field">
+            <%= f.email_field :email, autofocus: true, autocomplete: "off", placeholder: "Email", class: "form-input"%>
+          </div>
+
+          <div class="field">
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %>
+            <%= f.password_field :password, autocomplete: "off", placeholder: "Password", class: "form-input" %>
+          </div>
+
+          <div class="field">
+            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password confirmation", class: "form-input" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Sign up", class: "btn" %>
+          </div>
+        <% end %>
+
+        <div style="margin-bottom: 16px;">
+          <div class="ln-break"></div>
+        </div>
+
+        <div class="lwr-login">Already have a Bedouino account?
+          <%- if controller_name != 'sessions' %>
+            <%= link_to "Log in", new_session_path(resource_name) %><br />
+          <% end -%>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
