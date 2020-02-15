@@ -1,0 +1,45 @@
+<div class="container main-container">
+    <%= render 'shared/side_nav'%>
+  <div class="center-container">
+    <button class="tablink tablink-alter" onclick="openPage('Company-Profile', this, 'rgb(221, 245, 217)')" id="defaultOpen" >Company Profile</button>
+    <button class="tablink tablink-alter" onclick="openPage('Trading-Profile', this, 'rgb(221, 245, 217)')">Trading Profile</button>
+
+     <div id="Company-Profile" class="tabcontent">
+        <%= render "basic_prof" %>
+      </div>
+
+      <div id="Trading-Profile" class="tabcontent">
+        <%= render "trading_prof" %>
+      </div>
+
+  </div>
+</div>
+
+ <footer class=footer></footer>
+
+<script>
+  function openPage(pageName, elmnt, color, border) {
+    // Hide all elements with class="tabcontent" by default */
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Remove the background color of all tablinks/buttons
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+
+    // Show the specific tab content
+    document.getElementById(pageName).style.display = "block";
+
+    // Add the specific color to the button used to open the tab content
+    elmnt.style.backgroundColor = color;
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+
+</script>

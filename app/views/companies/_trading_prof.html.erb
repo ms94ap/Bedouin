@@ -1,0 +1,431 @@
+  <% if @company.errors.any? %>
+	<div id="error_explanation">
+		<h2>
+			<%= pluralize(@company.errors.count, "error") %>
+			prohibited this company from being saved:
+		</h2>
+
+		<ul>
+		<% @company.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
+	</div>
+<% end %>
+  <%= simple_form_for [@company.user, @company], html: {multipart: true, class: "comp-form"} do |f| %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+    <div class="inner-section">
+      <div class="card-header">Exporting Markets & Distribution</div>
+      <%= f.fields_for :export_markets do |expo| %>
+        <div class="inner-total">
+          <%= expo.text_field :total_distr %>
+          <%= expo.label :total_distr, "% Total Distribution" %>
+        </div>
+        <div class="expo-section">
+          <div class="row">
+            <div class="split three">
+              <ul>
+                <li>
+                  <%= expo.text_field :north_am, class: "input-market" %>
+                  <%= expo.label :north_am, "% North America" %>
+                </li>
+                <li>
+                  <%= expo.text_field :central_am, class: "input-market" %>
+                  <%= expo.label :central_am, "% Central America" %>
+                </li>
+                <li>
+                  <%= expo.text_field :south_am, class: "input-market" %>
+                  <%= expo.label :south_am, "% South America"%>
+                </li>
+                <li>
+                  <%= expo.text_field :oceania, class: "input-market" %>
+                  <%= expo.label :oceania, "% Oceania" %>
+                </li>
+                <li>
+                  <%= expo.text_field :africa, class: "input-market" %>
+                  <%= expo.label :africa, "% Africa" %>
+                </li>
+              </ul>
+            </div>
+            <div class="split three">
+              <ul>
+                <li>
+                  <%= expo.text_field :eastern_as, class: "input-market" %>
+                  <%= expo.label :eastern_as, "% Eastern Asia" %>
+                </li>
+                <li>
+                  <%= expo.text_field :southeast_as, class: "input-market" %>
+                  <%= expo.label :southeast_as, "% Southeast Asia" %>
+                </li>
+                <li>
+                  <%= expo.text_field :south_as, class: "input-market" %>
+                  <%= expo.label :south_as, "% South Asia" %>
+                </li>
+                <li>
+                  <%= expo.text_field :domestic, class: "input-market" %>
+                  <%= expo.label :domestic, "% Domestic" %>
+                </li>
+                <li>
+                  <%= expo.text_field :mid_east, class: "input-market" %>
+                  <%= expo.label :mid_east, "% Middle East" %>
+                </li>
+              </ul>
+            </div>
+            <div class="split three">
+              <ul>
+                <li>
+                  <%= expo.text_field :northern_euro, class: "input-market" %>
+                  <%= expo.label :northern_euro, "% Northern Europe" %>
+                </li>
+                <li>
+                  <%= expo.text_field :western_euro, class: "input-market" %>
+                  <%= expo.label :western_euro, "% Western Europe" %>
+                </li>
+                <li>
+                  <%= expo.text_field :southern_euro, class: "input-market" %>
+                  <%= expo.label :southern_euro, "% Southern Europe" %>
+                </li>
+                <li>
+                  <%= expo.text_field :eastern_euro, class: "input-market" %>
+                  <%= expo.label :eastern_euro, "% Eastern Europe" %>
+                </li>
+            </ul>
+          </div> 
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="inner-section">
+    <div class="card-header">Accepted Currency</div>
+    <%= f.fields_for :payment_currencies do |cur| %>
+      <div class="biz-section">
+        <div class="row">
+          <div class="split three">
+          <ul>
+            <li>
+              <%= cur.input :usd, label: "USD",
+                            as: :boolean,
+                            boolean_style: :inline,
+                            checked_value: true,
+                            unchecked_value: false,
+                            input_html: { class: 'custom-check-box' } %>
+            </li>
+            <li>
+              <%= cur.input :gbp, label: "GBP",
+                            as: :boolean,
+                            boolean_style: :inline,
+                            checked_value: true,
+                            unchecked_value: false,
+                            input_html: { class: 'custom-check-box' } %>
+            </li>
+            <li>
+              <%= cur.input :aud, label: "AUD",
+                            as: :boolean,
+                            boolean_style: :inline,
+                            checked_value: true,
+                            unchecked_value: false,
+                            input_html: { class: 'custom-check-box' } %>
+            </li>
+          </ul>
+        </div>
+        <div class="split three">
+          <ul>
+            <li>
+              <%= cur.input :hkd, label: "HKD",
+                            as: :boolean,
+                            boolean_style: :inline,
+                            checked_value: true,
+                            unchecked_value: false,
+                            input_html: { class: 'custom-check-box' } %>
+            </li>
+            <li>
+              <%= cur.input :eur, label: "EUR",
+                            as: :boolean,
+                            boolean_style: :inline,
+                            checked_value: true,
+                            unchecked_value: false,
+                            input_html: { class: 'custom-check-box' } %>
+            </li>
+            <li>
+              <%= cur.input :cad, label: "CAD",
+                            as: :boolean,
+                            boolean_style: :inline,
+                            checked_value: true,
+                            unchecked_value: false,
+                            input_html: { class: 'custom-check-box' } %>
+            </li>
+          </ul>
+        </div>
+        <div class="split three">
+          <ul>
+            <li>
+              <%= cur.input :jpy, label: "JPY",
+                            as: :boolean,
+                            boolean_style: :inline,
+                            checked_value: true,
+                            unchecked_value: false,
+                            input_html: { class: 'custom-check-box' } %>
+            </li>
+            <li>
+              <%= cur.input :chf, label: "CHF",
+                            as: :boolean,
+                            boolean_style: :inline,
+                            checked_value: true,
+                            unchecked_value: false,
+                            input_html: { class: 'custom-check-box' } %>
+            </li>
+            <li>
+              <%= cur.input :cny, label: "CNY",
+                            as: :boolean,
+                            boolean_style: :inline,
+                            checked_value: true,
+                            unchecked_value: false,
+                            input_html: { class: 'custom-check-box' } %>
+            </li>
+          </ul>
+        </div>
+        </div>
+      </div>  
+    <% end %>
+  </div>
+  <div class="inner-section">
+    <div class="card-header">Delivery Terms
+      <span class="tooltip">&#9432;
+        <div class="tooltiptext">Check Delivery Terms below</div>
+      </span>
+    </div>
+    
+    <%= f.fields_for :delivery_terms do |term| %>
+      
+      <div class="biz-section">
+        <div class="row">
+          <div class="split three">
+            <ul>
+              <li>
+                <%= term.input :fob, label: "FOB",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+                </li>
+              <li>
+                <%= term.input :exw, label: "EXW",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+                </li>
+              <li>
+                <%= term.input :fca, label: "FCA",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+                </li>
+              <li>
+                <%= term.input :ddp, label: "DDP",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+              <li>
+                <%= term.input :deq, label: "DEQ",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+            </ul>
+          </div>
+          <div class="split three">
+            <ul>
+              <li>
+                <%= term.input :daf, label: "DAF",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+              <li>
+                <%= term.input :cfr, label: "CFR",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+                </li>
+              <li>
+                <%= term.input :fas, label: "FAS",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+                </li>
+              <li>
+                <%= term.input :cpt, label: "CPT",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+              <li>
+                <%= term.input :express_delivery, label: "Exp. Delivery",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+            </ul>
+          </div>
+          <div class="split three">
+            <ul>
+              <li>
+                <%= term.input :ddu, label: "DDU",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+              <li>
+                <%= term.input :des, label: "DES",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+              <li>
+                <%= term.input :cif, label: "CIF",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+              <li>
+                <%= term.input :cip, label: "CIP",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="inner-section">
+    <div class="card-header">Payment Types
+      <span class="tooltip">&#9432;
+        <div class="tooltiptext">Check Payment Types below</div>
+      </span>
+    </div>
+
+    <%= f.fields_for :payment_types do |type| %>
+      <div class="biz-section">
+        <div class="row">
+          <div class="split three">
+            <ul>
+              <li>
+                <%= type.input :tt, label: "T/T",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+              <li>
+                <%= type.input :money_gram, label: "MoneyGram",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+              <li>
+                <%= type.input :escrow, label: "Escrow",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+            </ul>
+          </div>
+          <div class="split three">
+            <ul>
+              <li>
+                <%= type.input :western_union, label: "West. Union",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+              <li>
+                <%= type.input :lc, label: "L/C",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+              <li>
+                <%= type.input :paypal, label: "PayPal",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+            </ul>
+          </div>
+          <div class="split three">
+            <ul>
+              <li>
+                <%= type.input :credit_card, label: "Credit Card",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+              <li>
+                <%= type.input :cash, label: "Cash",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+              <li>
+                <%= type.input :dp_da, label: "D/P D/A",
+                                as: :boolean,
+                                boolean_style: :inline,
+                                checked_value: true,
+                                unchecked_value: false,
+                                input_html: { class: 'custom-check-box' } %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>   
+  </div>
+  <div class="basic-btn">
+		<%= f.submit "Save", class:"btn-save" %>
+	</div>
+<% end %>

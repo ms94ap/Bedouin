@@ -1,0 +1,440 @@
+<% if @company.errors.any? %>
+	<div id="error_explanation">
+		<h2>
+			<%= pluralize(@company.errors.count, "error") %>
+			prohibited this company from being saved:
+		</h2>
+
+		<ul>
+			<% @company.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
+	</div>
+<% end %>
+<%= simple_form_for [@company.user, @company], html: {multipart: true, class: "comp-form"} do |f| %>
+<%= f.hidden_field :user_id, value: current_user.id %>
+	<div class="inner-section">
+		<div class="card-header"> General information </div>
+		<div class="biz-section">
+			<div class="row">
+				<div class="split">
+					<ul>
+						<li class="li-container">
+							<%= f.label :name, "Company Name" %> <br>
+							<%= f.text_field :name, class: "user-container required", required: true %>
+						</li>
+
+						<li class="image-upload li-container-plain">
+							<div class="logo-container">
+								<div class="logo-input"></div>
+								<div class="label-container">
+									<label for="file-input">
+										Logo
+									</label>
+								</div>
+							</div>
+							<%= f.file_field :logo, id: "file-input"%>
+						</li><br>
+
+						<li class="li-container-plain">
+							<%= f.label :year_est, "Year Established" %> <br>
+							<%= f.select(:year_est, established_year, {include_blank: '(Select year)'}, class: "year-select") %>
+						</li>
+						<li class="li-container-plain">
+							<%= f.label :num_employees, "Number of Employees" %> <br>
+							<%= f.text_field :num_employees, class:"user-container"  %> 
+						</li>
+						<li class="li-container-plain">
+							<%= f.label :annual_revenue, "Annual Revenue" %> <br>
+							<%= f.text_field :annual_revenue, class:"user-container" %>
+						</li>
+					</ul>
+				</div>
+				<div class="split">
+					<ul>
+						<li class="li-container-plain">
+							<%= f.label :website %> <br>
+							<%= f.text_field :website, class: "user-container" %>
+						</li>
+						<li class="li-container">
+							<%= f.label :address %> <br>
+							<%= f.text_field :address, class: "user-container", required: true %>
+						</li>
+
+						<li class="li-container">
+							<%= f.label :city %> <br>
+							<%= f.text_field :city, class:"user-container", required: true %>
+						</li>
+
+						<li class="li-container-plain">
+							<%= f.label :state %> <br>
+							<%= f.text_field :state, class:"user-container" %>
+						</li>
+
+						<li class="li-container-plain">
+							<%= f.label :zip_code, "" %> <br>
+							<%= f.text_field :zip_code, class: "user-container", required: true %>
+						</li>
+
+						<li class="li-container">
+							<%= f.label :country %>  <br>
+							<%= f.country_select :country, { include_blank: '(Select country)' }, class:"user-container country-select", required: true, style:"background: none;" %>
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="comp-intro" >
+			<%= f.label :company_intro, "Company Introduction" %>
+			<%= f.text_area :company_intro, class: "text-container" %>
+		</div>
+	</div>
+	<div class="inner-section">
+		<div class="card-header">Business Type
+			<span class="type-span">(select up to 4 types)</span>
+			<sup>*</sup>
+		</div>
+		<%= f.fields_for :business_types do |biz| %>
+					<%# to check how to implement selection of checkboxes 
+					https://www.sitepoint.com/save-multiple-checkbox-values-database-rails/ %>
+		<div class="biz-section">
+			<div class="row">
+				<div class="split three">
+					<ul>					
+						<li>
+							<%= biz.input :man_factory, label: "Manufacturer / Factory",
+														as: :boolean,
+														boolean_style: :inline,
+														checked_value: true,
+														unchecked_value: false,
+														input_html: { class: 'custom-check-box' } %>
+						</li>
+
+						<li>
+							<%= biz.input :prod_farm, label: "Producer / Farmer",
+														as: :boolean,
+														boolean_style: :inline,
+														checked_value: true,
+														unchecked_value: false,
+														input_html: { class: 'custom-check-box' }%>
+						</li>
+
+						<li>
+							<%= biz.input :online, label: "Online Shop/Store",
+														as: :boolean,
+														boolean_style: :inline,
+														checked_value: true,
+														unchecked_value: false,
+														input_html: { class: 'custom-check-box' } %>
+						</li>
+						<li>
+							<%= biz.input :trading_co, label: "Trading Company",
+														as: :boolean,
+														boolean_style: :inline,
+														checked_value: true,
+														unchecked_value: false,
+														input_html: { class: 'custom-check-box' } %>
+						</li>
+					</ul>
+				</div>
+				<div class="split three">
+					<ul>
+						<li>
+							<%= biz.input :retailer, label: "Retailer",
+														as: :boolean,
+														boolean_style: :inline,
+														checked_value: true,
+														unchecked_value: false,
+														input_html: { class: 'custom-check-box' } %>
+						</li>
+
+						<li>
+							<%= biz.input :whole_distr, label: "Wholesale Distributor",
+														as: :boolean,
+														boolean_style: :inline,
+														checked_value: true,
+														unchecked_value: false,
+														input_html: { class: 'custom-check-box' } %>
+						</li>
+						<li>
+							<%= biz.input :hotel, label: "Hotelier",
+														as: :boolean,
+														boolean_style: :inline,
+														checked_value: true,
+														unchecked_value: false,
+														input_html: { class: 'custom-check-box' } %>
+						</li>
+						
+						<li>
+							<%= biz.input :restaurant, label: "Restaurant",
+														as: :boolean,
+														boolean_style: :inline,
+														checked_value: true,
+														unchecked_value: false,
+														input_html: { class: 'custom-check-box' } %>
+						</li>
+					</ul>
+				</div>		
+				<div class="split three">
+					<ul>
+						<li>
+							<%= biz.input :buying_office, label: "Buying Office",
+														as: :boolean,
+														boolean_style: :inline,
+														checked_value: true,
+														unchecked_value: false,
+														input_html: { class: 'custom-check-box' } %>
+						</li>
+
+						<li>
+							<%= biz.input :gov, label: "Goverment / Public Service",
+														as: :boolean,
+														boolean_style: :inline,
+														checked_value: true,
+														unchecked_value: false,
+														input_html: { class: 'custom-check-box' } %>
+						</li>
+
+						<li>
+							<%= biz.input :individual, label: "Individual",
+														as: :boolean,
+														boolean_style: :inline,
+														checked_value: true,
+														unchecked_value: false,
+														input_html: { class: 'custom-check-box' } %>
+						</li>
+
+						<li>
+							<%= biz.input :other, label: "Other",
+														as: :boolean,
+														boolean_style: :inline,
+														checked_value: true,
+														unchecked_value: false,
+														input_html: { class: 'custom-check-box' } %>
+						</li>
+					</ul>
+				</div>	
+			</div>
+		</div>
+		<% end %>
+	</div>
+	<div class="inner-section">
+		<div class="card-header"> Languages Spoken</div>
+
+			<%= f.simple_fields_for :languages do |lan| %>
+			<div class="biz-section">
+				<div class="row">
+					<div class="split three">
+						<ul>
+							<li>
+								<%= lan.input :eng, label: "English",
+															as: :boolean,
+															boolean_style: :inline,
+															checked_value: true,
+															unchecked_value: false,
+															input_html: { class: 'custom-check-box' } %>
+							</li>
+							<li>
+								<%= lan.input :spa, label: "Spanish",
+															as: :boolean,
+															boolean_style: :inline,
+															checked_value: true,
+															unchecked_value: false,
+															input_html: { class: 'custom-check-box' } %>
+							</li>
+							<li>
+								<%= lan.input :rus, label: "Russian",
+															as: :boolean,
+															boolean_style: :inline,
+															checked_value: true,
+															unchecked_value: false,
+															input_html: { class: 'custom-check-box' } %>
+							</li>
+							<li>
+								<%= lan.input :hind, label: "Hindu",
+															as: :boolean,
+															boolean_style: :inline,
+															checked_value: true,
+															unchecked_value: false,
+															input_html: { class: 'custom-check-box' } %>
+							</li>
+						</ul>
+					</div>
+					<div class="split three">
+						<ul>
+							<li>
+								<%= lan.input :chi, label: "Chinese",
+															as: :boolean,
+															boolean_style: :inline,
+															checked_value: true,
+															unchecked_value: false,
+															input_html: { class: 'custom-check-box' } %>
+							</li>
+							<li>
+								<%= lan.input :fre, label: "French",
+															as: :boolean,
+															boolean_style: :inline,
+															checked_value: true,
+															unchecked_value: false,
+															input_html: { class: 'custom-check-box' } %>
+							</li>
+							<li>
+								<%= lan.input :jap, label: "Japanesse",
+															as: :boolean,
+															boolean_style: :inline,
+															checked_value: true,
+															unchecked_value: false,
+															input_html: { class: 'custom-check-box' } %>
+							</li>
+							<li>
+								<%= lan.input :ara, label: "Arabic", 
+															as: :boolean,
+															boolean_style: :inline,
+															checked_value: true,
+													#ddf5d9		unchecked_value: false,
+															input_html: { class: 'custom-check-box' } %>
+							</li>
+						</ul>
+					</div>
+					<div class="split three">
+						<ul>
+							<li>
+								<%= lan.input :kor, label: "Korean",
+															as: :boolean,
+															boolean_style: :inline,
+															checked_value: true,
+															unchecked_value: false,
+															input_html: { class: 'custom-check-box' } %>
+							</li>
+							<li>
+								<%= lan.input :ger, label: "German",
+															as: :boolean,
+															boolean_style: :inline,
+															checked_value: true,
+															unchecked_value: false,
+															input_html: { class: 'custom-check-box' } %>
+							</li>
+							<li>
+								<%= lan.input :por, label: "Portuguese",
+															as: :boolean,
+															boolean_style: :inline,
+															checked_value: true,
+															unchecked_value: false,
+															input_html: { class: 'custom-check-box' } %>
+							</li>
+							<li>
+								<%= lan.input :ita, label: "Italian",
+															as: :boolean,
+															boolean_style: :inline,
+															checked_value: true,
+															unchecked_value: false,
+															input_html: { class: 'custom-check-box' } %>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+	<div class="inner-section">
+		<div class="card-header">Certifications
+			<span><button class="add" onclick="addForm()">+</button>(add js here)</span>
+		</div>
+		<%= f.simple_fields_for :certifications, html: {id: "cert-form"} do |cert| %>
+			<div class="biz-section cert">
+				<div class="row">
+					<ul>
+						<li>
+							<%= cert.input :name, placeholder: "(Certification)", label: false %>
+						</li>
+						<li>
+							<%= cert.input :org_name, placeholder: "(Organization)", label: false %>
+						</li>
+						<li>
+							<%= cert.input :org_web, placeholder: "(Web site)", label: false %>
+						</li>
+						<li>
+							<%= cert.select(:year_awarded, year_select, {include_blank: '(Select year)'}, class: "award-year") %>
+						</li>
+						<li>
+							<button onclick="removeform()">-</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		<% end %>
+	</div>
+	<div class="inner-section">
+		<div class="card-header"> Company Pictures </div>
+		<div class="row">
+			<div class="biz-section pict">
+				<ul>
+					<li class="image-upload">
+						<%# <div class="logo-container"> %>
+							<div class="pic-input"></div>
+							<div class="pic-container">
+								<label for="file-input">
+									+
+								</label>
+							</div>
+						<%# </div> %>
+						<%= f.file_field :comp_pict, id: "file-input"%>
+					</li>
+					<li class="image-upload">
+						<%# <div class="logo-container"> %>
+							<div class="pic-input"></div>
+							<div class="pic-container">
+								<label for="file-input">
+									+
+								</label>
+							</div>
+						<%# </div> %>
+						<%= f.file_field :comp_pict, id: "file-input"%>
+					</li>
+					<li class="image-upload">
+						<%# <div class="logo-container"> %>
+							<div class="pic-input"></div>
+							<div class="pic-container">
+								<label for="file-input">
+									+
+								</label>
+							</div>
+						<%# </div> %>
+						<%= f.file_field :comp_pict, id: "file-input"%>
+					</li>
+				</ul>
+			</div>			
+		</div>
+	</div>
+	<div class="inner-section">
+		<div class="card-header">Other Comments</div>
+		<div class="row">
+			<div class="biz-section">
+					<%= f.text_area :other_comments, label: "", class: "text-container" %>
+			</div>
+		</div>
+	</div>
+	
+	<div class="basic-btn">
+		<%= f.submit "Save", class:"btn-save" %>
+	</div>
+
+	
+
+<% end %>
+
+
+<%# <script>
+function myFunction() {
+    var checkBox = document.getElementById("company_organic_co");
+    var text = document.getElementById("text");
+    if (checkBox.checked === true){
+        text.style.display = "block";
+    } else {
+       text.style.display = "none";
+    }
+}
+</script> %>

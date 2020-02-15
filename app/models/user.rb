@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable #:validatable
 
   validates :email, presence: true
+  has_one :company
+
+  enum :role => [:user, :admin]
 end

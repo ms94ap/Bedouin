@@ -10,11 +10,11 @@
 		</li>
 
 		<li class="nav-item">
-			<%# if !current_user.company.nil? %>
-				<%#= link_to "Company Profile", edit_company_path(current_user), class:"item-link" %>
-				<%# else %>
-				<%#= link_to "Company Profile", new_user_company_path(current_user), class:"item-link" %>
-			<%# end %>
+			<% if !current_user.company.nil? %>
+				<%= link_to "Company Profile", edit_company_path(current_user), class:"item-link" %>
+				<% else %>
+				<%= link_to "Company Profile", new_user_company_path(current_user), class:"item-link" %>
+			<% end %>
 		</li>
 
 		<li class="nav-item">
