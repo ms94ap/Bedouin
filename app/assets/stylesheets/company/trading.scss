@@ -1,0 +1,41 @@
+  .inner-total{
+    margin-top: 5px;
+    & input{
+      width: 4%;
+      height: 32px;
+      font-size: 16px;
+      color: rgb(99, 114, 130);
+      margin-left: 10px;
+    }
+  }
+
+.inner-expo{
+  margin-top: 15px;
+  & label {
+    font-size: 16px;
+  }
+  & input {
+    width: 5%;
+    height: 32px;
+    font-size: 16px;
+    color: rgb(99, 114, 130);
+    margin-left: 2px;
+  }
+
+}
+
+.expo-section{
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.expo-section ul li{
+  margin-top: 2px;;
+ & input{
+    width: 12%;
+    height: 32px;
+    font-size: 16px;
+    color: rgb(99, 114, 130);
+  }
+}

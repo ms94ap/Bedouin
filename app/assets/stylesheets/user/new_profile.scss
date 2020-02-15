@@ -1,0 +1,32 @@
+.permissions {
+    margin-top: 20px;
+}
+
+.li-header{
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.inner-li{
+    font-size: 15px;
+}
+
+.permissions ul {
+    width: 100%;
+    overflow:hidden;
+    display: inline-flex;
+}
+
+.permissions ul li + li {
+    margin-left: 25px;
+}
+
+.permissions li div{
+    font-size: 15px;
+}
+
+.sub-new-user {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

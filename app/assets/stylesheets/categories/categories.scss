@@ -1,0 +1,136 @@
+.categories {
+  .category-container {
+    margin-top: 25px;
+    .category-title {
+      .category-link {
+        color: #fff;
+        text-transform: uppercase;
+        line-height: 0.5;
+        background: $theme;
+        padding: 15px 25px 15px 10px;
+        position: relative;
+        display: inline-block;
+        border-radius: 0 5px 0 0;
+      }
+    }
+    .subcat-display-container{
+      background: white;
+      .list {
+        .li-subcat {
+          background: #fff;
+          overflow: hidden;
+          .subcat-link{
+            display: block;
+            color: $fonts;
+            padding: 10px 20px;
+            border: 1px solid $border;
+            font-size: 14px;
+            margin: 10px;
+            &:hover {
+              color: $color1;
+              background: $theme;
+            }
+          }
+          .subcat {
+            border-bottom: 1px solid #e0e0e0;
+            border-right: 1px solid #e0e0e0;
+            padding: 20px 10px;
+            text-align: center;
+            position: relative;
+            // .image {
+            //   position: relative;
+            //   .sale, .organic, .new {
+            //     position: absolute;
+            //     padding: 5px 9px;
+            //     color: #fff;
+            //     font-size: 12px;
+            //     text-transform: uppercase;
+            //   }
+            //   .sale {
+            //     background: #ffaf00;
+            //     right: 0;
+            //   }
+            //   .organic {
+            //     background: $color10;
+            //     left: 0;
+            //   }
+            //   .new {
+            //     left: -52px;
+            //     background: $color12;
+            //     width: 153px;
+            //     transform: rotate(-46deg);
+            //   }
+            //   .img-fluid {
+            //     width: 269px;
+            //   }
+            // }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(min-width: 425px) {
+  .categories {
+    .category-container {
+      .subcat-display-container {
+        .list {
+          // display: block;
+          .li-subcat {
+            width: 50%;
+            display: inline-block;
+            .subcat-link {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(min-width: 768px) {
+	.categories {
+    .category-container {
+      .subcat-display-container {
+        .list {
+          .li-subcat {
+            width: 33.33%;
+            display: -webkit-inline-flex;
+            display: -ms-inline-flexbox;
+            display: inline-flex;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(min-width: 990px) {
+	.categories {
+    .category-container {
+      .subcat-display-container {
+        ul {
+          .li-subcat {
+            width: 25% !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(min-width: 1140px) {
+	.categories {
+    .category-container {
+      .subcat-display-container {
+        ul {
+          .li-subcat {
+            width: 20% !important;
+          }
+        }
+      }
+    }
+  }
+}

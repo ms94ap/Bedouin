@@ -1,0 +1,148 @@
+.nav-menu {
+  margin-top: 30px;
+  .lp-inner {
+    position: relative;
+    display: flex;
+    .categories-navbar {
+      width: 23%;
+      float: left;
+      padding-right: 15px;
+      .hero-side-category {
+        background-color: #ffffff;
+        width: 100%;
+        text-transform: capitalize;
+        position: relative;
+        .category-toggle-wrap {
+          background-color: $theme;
+          width: 100%;
+          padding: 12px 25px;
+          position: relative;
+          border-top-right-radius: 5px;
+          &::after {
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid transparent;
+            border-top: 15px solid #5d8801;
+            bottom: 0;
+            content: '';
+            left: -15px;
+            position: absolute;
+            z-index: 1;
+            -webkit-transform: translateY(100%);
+            -ms-transform: translateY(100%);
+            transform: translateY(100%);
+          }
+          &::before{
+            background: $theme;
+            content: '';
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 15px;
+            z-index: 1;
+            -webkit-transform: translateX(-100%);
+            -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+            }
+          .category-toggle {
+            padding: 0;
+            margin: 0;
+            border: none;
+            background-color: transparent;
+            color: #ffffff;
+            font-size: 15px;
+            text-transform: uppercase;
+            font-weight: 500;
+            line-height: 30px;
+            width: 100%;
+          }
+        }
+        .category-menu {
+          background-color: #ffffff;
+          float: left;
+          width: 100%;
+          left: 0;
+          top: 45px;
+          -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1);
+        }
+        .category-menu {
+          .categories-container {
+            .category-item {
+              position: relative;
+              border-bottom: 1px solid #e8e8e8;
+              &:hover {
+                background-color: $theme ;
+              }
+              .cat-link {
+                display: block;
+                padding: 10px 25px;
+                line-height: 30px;
+                font-size: 14px;
+                color: #606060;
+                font-weight: 400;
+                position: relative;
+                
+                &:hover {
+                  color:white;
+                }
+                &:before {
+                  font-family: 'fontAwesome';
+                  content: "\f054";
+                  position: absolute;
+                  right: 25px;
+                  top: 0;
+                  line-height: 50px;
+                }
+              }
+              .category-mega-menu {
+                display: none;
+                @extend .flex-wrap;
+                position: absolute;
+                left: 272px;
+                top: 0;
+                width: 800px;
+                z-index: 999;
+                max-width: 910px;
+                background-color: #ffffff;
+                -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+                box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+                padding: 40px;
+                -webkit-transition: all 0.3s ease 0s;
+                -o-transition: all 0.3s ease 0s;
+                transition: all 0.3s ease 0s;
+                .category-sub-item {
+                  display: inline-block;
+                  width: 33.33%;
+                  padding: 0 15px;
+                  .menu-title {
+                    display: block;
+                    font-size: 16px;
+                    font-weight: 500;
+                    color: $theme;
+                    text-transform: uppercase;
+                    padding-bottom: 10px;
+                  }
+                  .sub-container {
+                    .sub-item {
+                      margin-bottom: 4px;
+                      .item {
+                        display: block;
+                        font-size: 14px;
+                        color: #606060;
+                        line-height: 20px;
+                      }
+                    }
+                  }
+                }
+              }
+              &:hover .category-mega-menu {
+                @extend .flex-box;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

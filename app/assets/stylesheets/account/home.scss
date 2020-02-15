@@ -1,0 +1,18 @@
+.home-list {
+  .home-container {
+    .home-item {
+      border: 1px solid #d9d9d9;
+      background-color: white;
+      list-style: none;
+      font-size: 20px;
+      color: #637282;
+      border-radius: 5px;
+      // width: 26%;
+      margin: 10px 0;
+      height: 155px;
+      &:hover{
+          box-shadow:  0 4px 8px 0 rgb(153, 227, 143), 0 6px 20px 0 rgb(170, 231, 162);
+      }
+    }
+  }
+}

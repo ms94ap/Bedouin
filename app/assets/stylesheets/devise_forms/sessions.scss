@@ -1,0 +1,83 @@
+.outer-container{
+width: 100%;
+}
+
+.inner-container{
+    margin: 10% auto;
+    width: 35%;
+    text-align: center;
+    color: #637282;
+}
+
+.form {
+    margin-top: none;
+    padding-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.alter{
+    font-size: 16px;
+}
+//  Alternative Log in options
+
+.login-opt{
+    border-radius: 2px;
+    height: 50px;
+    vertical-align: middle;
+    margin-bottom: 16px;
+    padding-top: 15px;
+}
+
+.opt-1 {
+    background-color: #365899;
+    color: #ffff;
+    border: none;
+}
+
+.opt-2 {
+    border: 1px solid #b3b3b3;
+}
+
+// Devise form 
+.dev-form{
+    height: 232px;
+}
+
+.main-form{
+    padding: 10px;
+}
+
+.form-input{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 16px;
+    font-size: 16px;
+    padding-bottom: 0;
+    padding-top: 0;
+    color:#637282;
+}
+
+.check-rem{
+    width: 100%;
+    display: flex;
+}
+
+.inner-check{
+    transform: scale(1.5);
+    margin-right: 15px;
+}
+
+.inner-text{
+    color:#484848;
+}
+
+.log-btn{
+    margin-top: 16px;
+}
+
+.log-input:focus{
+    outline: none;
+    border:1px solid #98e7b9;
+    box-shadow: 0 0 10px #98e7b9;
+}

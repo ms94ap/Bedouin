@@ -1,0 +1,178 @@
+.react-select {
+  width: 31%;
+}
+
+// .select {
+// 	@extend .flex-box;
+// 	@extend .items-center;
+// 	background: #ffffff;
+// 	color: #575757;
+// 	border-radius: 0;
+//   font-size: 14;
+//   // font-weight: $searchInputFontWeight;
+//   // line-height: $searchInputLineHeight;
+//   // letter-spacing: $searchInputLetterSpacing;
+//   // text-transform: $searchInputTransform;
+// 	box-shadow: none;
+// 	border-style: solid;
+//   vertical-align: middle;
+//   cursor: pointer;
+// 	-webkit-appearance: none;
+// 	-moz-appearance: none;
+// 	appearance: none;
+// }
+
+// .react-select__control {
+// 	box-shadow: none;
+// 	border-radius: 0;
+// 	// &:after {
+// 	// 	content: $selectDropIcon;
+// 	// 	font-family: $iconsFont;
+// 	// 	color: $checkoutSelectFontColor;
+// 	// 	right: 10px;
+// 	// 	position: absolute;
+// 	// }
+// 	// Hide React Select default indicator and
+// 	// overide it with our custom icons
+// 	// .react-select__indicators {
+// 	// 	display: none !important;
+// 	// }
+// 	&.react-select__control--is-focused,
+// 	&.react-select__control--menu-is-open {
+// 		box-shadow: none;
+// 		background: "red";
+// 	}
+// 	.react-select__value-container {
+// 		@extend .select;
+// 		// background: "red";
+// 	}
+// }
+
+// .react-select__menu {
+// 	z-index: 5;
+// 	.react-select__option {
+// 		background: white;
+// 			color: black;
+// 		&.react-select__option--is-selected {
+// 			background: white;
+// 			color: black;
+// 		}
+// 		&.react-select__option--is-focused {
+// 			color: blue;
+// 		}
+// 		&:hover {
+// 			transition: all .2s ease;
+// 			-webkit-transition: all .2s ease;
+// 		}
+// 	}
+// }
+
+// // Specific Views Overides
+// 	.react-select__control {
+// 		color: #10384F!important;
+// 		&.react-select__control--is-focused,
+// 		&.react-select__control--menu-is-open {
+// 			color: "black" !important;
+// 			// border-color: $checkoutSelectBorderColor !important;
+// 			// border-top-width: $checkoutSelectBorderTopWidth;
+// 			// border-right-width: $checkoutSelectBorderRightWidth;
+// 			// border-bottom-width: $checkoutSelectBorderBottomWidth;
+// 			// border-left-width: $checkoutSelectBorderLeftWidth;
+// 			border-style: solid;
+// 		}
+// 		.react-select__value-container {
+// 			@extend .select;
+// 			// background: red !important;
+// 			color: #10384F!important;
+// 			// border-color: $checkoutSelectBorderColor !important;
+// 			// border-color: $checkoutSelectBorderColor !important;
+// 			// border-top-width: $checkoutSelectBorderTopWidth;
+// 			// border-right-width: $checkoutSelectBorderRightWidth;
+// 			// border-bottom-width: $checkoutSelectBorderBottomWidth;
+// 			// border-left-width: $checkoutSelectBorderLeftWidth;
+// 			border-style: solid;
+// 		}
+// 	}
+
+
+// // .search-select {
+// //   @extend .flex-box;
+// //   @extend .items-center;
+// // 	.react-select__control {
+// // 	  color: black !important;
+// // 	  background: white !important;
+// //     width: 250px;
+// //     height: 50;
+// //     border: none !important;
+// // 		&.react-select__control--is-focused,
+// // 		&.react-select__control--menu-is-open {
+// // 	    background: white !important;
+// // 	    color: black !important;
+// // 		}
+// // 		.react-select__value-container {
+// // 			position: relative;
+// // 			height: 100%;
+// // 			.react-select__single-value {
+// // 				color: black !important;
+// // 		    // top: (($searchInputHeight)-($searchInputFontSize))/2;
+// // 		    position: absolute;
+// // 				margin: 0;
+// // 				padding: 0;
+// // 				-webkit-transform: initial;
+// // 				-ms-transform: initial;
+// // 				transform: initial;
+// // 			}
+// // 	    @extend .select;
+// // 	    background: white !important;
+// // 	    color: $searchSelectFontColor !important;
+// // 	    // padding: $selectPadding !important;
+// // 	    // border-color: $searchSelectBorderColor !important;
+// // 	    // border-top-width: $searchSelectBorderTopWidth !important;
+// // 	    // border-right-width: $searchSelectBorderRightWidth !important;
+// // 	    // border-bottom-width: $searchSelectBorderBottomWidth !important;
+// // 	    // border-left-width: $searchSelectBorderLeftWidth !important;
+// // 	    // border-style: solid;
+// // 	    width: 100%;
+// // 	    height: 100%;
+// // 		}
+// // 	}
+// // }
+
+// // .select-filter {
+// //   @extend .flex-box;
+// //   @extend .items-center;
+// // 	.react-select__control {
+// // 	  background: $sortSelectBg !important;
+// //     width: $sortSelectWidth;
+// //     border: none !important;
+// // 		&.react-select__control--is-focused,
+// // 		&.react-select__control--menu-is-open {
+// // 	    background: $sortSelectBg !important;
+// // 	    color: $sortSelectFontColor !important;
+// // 		}
+// // 		.react-select__value-container {
+// // 			position: relative;
+// // 			height: 100%;
+// // 			.react-select__single-value {
+// // 		    top: (($searchInputHeight)-($searchInputFontSize))/2;
+// // 		    position: absolute;
+// // 				-webkit-transform: initial;
+// // 				-ms-transform: initial;
+// // 				transform: initial;
+// // 				margin: 0;
+// // 				padding: 0;
+// // 			}
+// // 	    @extend .select;
+// // 	    background: $sortSelectBg !important;
+// // 	    color: $sortSelectFontColor !important;
+// // 	    border-color: $sortSelectBorderColor !important;
+// // 	    border-top-width: $sortSelectBorderTopWidth !important;
+// // 	    border-right-width: $sortSelectBorderRightWidth !important;
+// // 	    border-bottom-width: $sortSelectBorderBottomWidth !important;
+// // 	    border-left-width: $sortSelectBorderLeftWidth !important;
+// // 			border-style: solid;
+// // 	    width: 100%;
+// // 	    height: 100%;
+// // 		}
+// // 	}
+// // }

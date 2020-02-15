@@ -1,0 +1,49 @@
+/// checkbox BEFORE label ///
+
+ul li .custom-check-box {
+    display: none;   
+    & + label:before {
+      content: '';
+      height: 15px;
+      margin-right: 5px;
+      width: 15px;
+      display: inline-block;
+      vertical-align: middle;
+      border: 1px solid rgb(179, 179, 179);
+      cursor: pointer;
+      text-align: center;
+      margin-bottom: 5px;
+      border-radius: 1px;
+    }
+      
+    &:checked + label:before {
+      content: '\2713';
+      font-size: 14px;
+      // background: $color3;
+    }
+  }
+
+  /// checkbox AFTER label ///
+
+  ul li .custom-check-bx{
+    display: none;   
+    & + label:after {
+      content: '';
+      height: 15px;
+      margin-left: 5px;
+      width: 15px;
+      display: inline-block;
+      vertical-align: middle;
+      border: 1px solid rgb(179, 179, 179);
+      cursor: pointer;
+      text-align: center;
+      margin-bottom: 5px;
+      border-radius: 2px;
+    }
+      
+    &:checked + label:after {
+      content: '\2713';
+      // background: $color3;
+      font-size: 14px;
+    }
+  }

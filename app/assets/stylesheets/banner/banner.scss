@@ -1,0 +1,29 @@
+.banner-container {
+  margin-top: 25px;
+  .single-banner {
+    -webkit-box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.1);
+    .banner-item {
+      .banner-link {
+        display: block;
+        .banner-img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .banner-container {
+    .single-banner {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+      .banner-item {
+        width: 50%;
+      }
+    }
+  }
+}

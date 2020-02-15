@@ -1,0 +1,36 @@
+.user-container{
+    height: 32px;
+    width: 42%;
+    margin-top: 5px;
+    font-size: 15px;
+    color: rgb(99, 114, 130);
+    border: 1px solid rgb(179, 179, 179);
+}
+
+.span-input{
+    height: 32px;
+    width: 10%;
+    font-size: 15px;
+    color: rgb(99, 114, 130);
+}
+
+.li-span{
+    margin-left: 10px;
+}
+
+.sub-form{
+    text-align: center;
+    margin-top: 60px;
+}
+
+.btn-save{
+    height: 48px;
+    width: 120px;
+    background-color: rgb(238, 250, 236);
+    color: rgb(99, 114, 130);
+    font-size: 14px;
+    cursor: pointer;
+    &:hover{
+        background-color: rgb(170, 231, 162);
+    }
+}

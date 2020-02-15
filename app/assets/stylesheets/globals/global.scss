@@ -1,0 +1,151 @@
+//  GENERAL
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+}
+
+a:link {
+   text-decoration: none;
+   cursor: pointer;
+}
+
+a:visited {
+   text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.li{
+  margin: 0;
+}
+
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+body{
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  background: #fff;
+  font-weight: 400;
+  background-color: #f5f5f5;
+}
+
+#error_explanation{
+  font-size: 15px;
+  text-align: center;
+}
+
+// .container{
+//   display: grid;
+//   max-width: auto;
+//   margin: 0 auto;
+//   grid-template-columns: repeat(12, 1fr);
+//   grid-auto-rows: minmax(100px, auto);
+// }
+
+input{
+  border-radius: 2px;
+  border: 1px solid rgb(179, 179, 179);
+  padding-left: 5px;
+}
+
+// COMMON
+
+.tab-container {
+  color: rgb(99, 114, 130);
+  padding: 15px 20px 0 20px;
+  height: 100%;
+  background-color: white;
+}
+
+.card-header{
+  font-size: 20px;
+  position: relative;
+  z-index: 1;
+  &::before{
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 1px;
+      width: 70%;
+      border-bottom: 1px solid rgb(217, 217, 217);
+  }
+  & span{
+      font-size: 14px;
+  }
+}
+
+.card-header sup {
+  color: red;
+  font-size: 18px;
+}
+
+.li-container:after {
+  content:"*";
+  color: red;
+}
+
+.li-container{
+  margin-top: 18px;
+  font-size: 18px;
+  padding-left: 15px;
+}
+
+.li-container-plain{
+  margin-top: 18px;
+  font-size: 18px;
+  padding-left: 15px;
+}
+
+.split{
+  width: 50%;
+  float: left;
+  &.three{
+      width: 33.33%;
+      float: left;
+  }
+  &.four{
+      width: 25%;
+  }
+}
+
+.main-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .main-container {
+    width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .main-container {
+    width: 1170px;
+  }
+}
+@media (min-width: 1400px) {
+  .main-container {
+    width: 1500px;
+  }
+}

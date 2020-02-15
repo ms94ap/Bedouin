@@ -1,0 +1,180 @@
+.comp-form{
+    width: 100%;
+    margin-top: 58px;
+}
+
+/// SPLIT TO SECTIONS
+
+.inner-section{
+    margin-top: 20px;
+}
+
+/// SPLIT EACH SECTION
+.biz-section{
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+/// LOGO ///
+
+.image-upload > input
+{
+   display: none;
+}
+
+.label-container{
+    width: 48px;
+    height: 24px;
+    border: 1px solid rgb(217, 217, 217);
+    margin-left: 10%;
+    margin-top: 10px;
+    background: rgb(221, 245, 217);
+    &:hover{
+        background: rgb(170, 231, 162);
+    }
+}
+
+
+.label-container > label{
+  cursor:pointer;
+  font-size: 15px;
+  padding-left: 7px;
+}
+
+.logo-input {
+    border: 1px solid rgb(217, 217, 217);
+    width: 28%;
+    height: 135px;
+}
+
+/// HANDLE DROPDOWNS ///
+
+.country-select{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    padding-left: 10px;
+}
+
+.year-select{
+    width: 150px;
+    background: none;
+    height: 32px;
+    font-size: 15px;
+    color: rgb(99, 114, 130);
+    margin-top: 5px;
+    border-radius: 2px;
+    border: 1px solid rgb(179, 179, 179);
+    padding-left: 10px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+/// HANDLE INTRO TEX AREA ///
+
+.comp-intro{
+    margin: 25px 24px;
+    & label {
+        font-size: 18px;
+    }
+}
+
+/// CERTIFICATIONS SECTION ///
+
+.cert ul li {
+    display: block;
+    float: left;
+    &:not(:first-child){
+        margin-left: 10px;
+    }
+}
+
+.cert input {
+    height: 32px;
+    font-size: 16px;
+}
+
+
+.text-container {
+    width:100%;
+    height: 100px;
+    margin-top: 5px;
+    font-size: 15px;
+    color: rgb(99, 114, 130);
+    font-family: inherit;
+    padding-left: 5px;
+    border-radius: 2px;
+    border: 1px solid rgb(179, 179, 179);
+}
+
+.award-year{
+    width: 150px;
+    background: none;
+    height: 32px;
+    font-size: 15px;
+    color: rgb(99, 114, 130);
+    border-radius: 2px;
+    border: 1px solid rgb(179, 179, 179);
+    padding-left: 10px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.add{
+    height: 23px;
+    background: rgb(221, 245, 217);
+    margin-bottom: 4px;
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 2px;
+    &:hover{
+        background: rgb(170, 231, 162);
+    }
+}
+
+.cert button{
+    height: 23px;
+    background: rgb(221, 245, 217);
+    margin-top: 4px;
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 2px;
+    &:hover{
+        background: rgb(170, 231, 162);
+    }
+}
+
+/// COMPANY PICTURES ///
+.pict ul li{
+    display: block;
+    float: left;
+    &:not(:first-child){
+        margin-left: 10px;
+    }
+}
+
+.pic-input {
+    border: 1px solid rgb(217, 217, 217);
+    height: 135px;
+    width: 140px;
+}
+
+.pic-container{
+    width: 22px;
+    height: 22px;
+    border: 1px solid rgb(217, 217, 217);
+    margin-left: 58px;
+    margin-top: 8px;
+    background: rgb(221, 245, 217);
+    &:hover{
+        background: rgb(170, 231, 162);
+    }
+}
+
+.pic-container > label{
+    cursor: pointer;
+    font-size: 14px;
+    padding-left: 5px;
+}
+
+.basic-btn{
+    text-align: center;
+    margin: 50px 0;
+}
