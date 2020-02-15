@@ -1,0 +1,27 @@
+<%# if @taxonomy.errors.any? %>
+  <%# <div id="error_explanation" class="fields_with_errors">
+    <h2> %>
+      <%#= pluralize(@taxonomy.errors.count, "error") %>
+      <%# prohibited this taxonomy from being saved:
+    </h2>
+ 
+    <ul> %>
+    <%# @taxonomy.errors.full_messages.each do |msg| %>
+      <%# <li> %>
+        <%#= msg %>
+      <%# </li> %>
+    <%# end %>
+  
+    <%# </ul>
+  </div> %>
+<%# end %>
+
+<%= form_for ([:admin, @taxonomy]) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

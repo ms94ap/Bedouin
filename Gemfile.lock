@@ -56,6 +56,10 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.13)
     bcrypt (3.1.13-java)
     bindex (0.8.1)
@@ -67,6 +71,7 @@ GEM
     byebug (11.1.1)
     coderay (1.1.2)
     concurrent-ruby (1.1.6)
+    connection_pool (2.2.2)
     countries (3.0.1)
       i18n_data (~> 0.10.0)
       sixarm_ruby_unaccent (~> 1.1)
@@ -82,6 +87,7 @@ GEM
       responders
       warden (~> 1.2.3)
     erubi (1.9.0)
+    execjs (2.7.0)
     ffi (1.12.2)
     ffi (1.12.2-java)
     ffi (1.12.2-x64-mingw32)
@@ -174,6 +180,12 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    react-rails (2.6.1)
+      babel-transpiler (>= 0.7.0)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -260,6 +272,7 @@ DEPENDENCIES
   pry
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.1)
+  react-rails
   sass-rails (>= 6)
   simple_form
   spring

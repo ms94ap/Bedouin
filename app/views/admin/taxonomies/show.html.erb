@@ -1,0 +1,14 @@
+  Name: <%= @taxonomy.name%>
+
+  <ul>
+  	<%# @taxonomy.products.each do |p| %>
+  	<li><%#= p.name %></li>
+  	<%# end %>
+
+  </ul>
+
+  <%= link_to "Back to categories", admin_taxonomies_path%>
+  <p>
+  	
+  <%= link_to "Sign out", destroy_user_session_path, method: 'delete' %>
+  </p>

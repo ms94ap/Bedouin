@@ -1,0 +1,42 @@
+
+<div class="admin">
+	<%=react_component("admin/Sidebar")%>
+
+	<div class="admin-container">
+		
+		<div class="header navbar">
+			<div class="header-container">
+			dsfsdfsdafdfdf
+			</div>
+		</div>
+		<div class="main-content">
+			<ul class="categories-list">
+				<% @taxonomies.each do |c| %>
+ 					<li type="text" >
+						<%=link_to c.name, admin_taxonomy_path(c) %> <%=link_to "Delete", admin_taxonomy_path(c), :method => :delete, data: {:confirm => "Are you sure?"} %>
+					</li> 
+				<% end %>
+			</ul>
+
+
+<%= link_to "create new taxonomy", new_admin_taxonomy_path, :class => 'show-form' %>
+<%= link_to "Sign out", destroy_user_session_path, method: 'delete' %>
+<%= link_to "Home", root_path %>
+		<%#= react_component("admin/Taxonomies",
+			taxonomies: @taxonomies,
+		)%>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
