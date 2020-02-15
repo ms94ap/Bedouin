@@ -1,0 +1,53 @@
+<div class="side-navigation" id="side-nav">
+	<ul class="nav-items">
+		
+		<li class="nav-item">
+			<%= link_to "Home", user_path(current_user), class:"item-link" %>
+		</li>
+
+		<li class="nav-item">
+			<%= link_to "Profile", edit_user_path(current_user), class:"item-link" %>
+		</li>
+
+		<li class="nav-item">
+			<%# if !current_user.company.nil? %>
+				<%#= link_to "Company Profile", edit_company_path(current_user), class:"item-link" %>
+				<%# else %>
+				<%#= link_to "Company Profile", new_user_company_path(current_user), class:"item-link" %>
+			<%# end %>
+		</li>
+
+		<li class="nav-item">
+			<%#= link_to "Messages Center", user_products_path(current_user), class:"item-link"%>
+		</li>
+
+		<li class="nav-item">
+			<%#= link_to "Business cards", user_business_cards_path(current_user),  class:"item-link" %>
+		</li>
+
+		<li class="nav-item">
+			<%#= link_to "Pins", user_products_path(current_user),class:"item-link" %>
+		</li>
+
+		<li class="nav-item">
+			<%#= link_to "Products", company_products_path(current_user), class:"item-link"%>
+		</li>
+
+		<li class="nav-item">
+			<%#=link_to "Posts", user_posts_path(current_user), class:"item-link"%>
+		</li>
+
+		<li class="nav-item">
+			<%#=link_to "RFQs (premium)", user_products_path(current_user), class:"item-link"%>
+		</li>
+
+		<li class="nav-item">
+			<%#= link_to "Analytics (premium)", user_products_path(current_user), class:"item-link"%>
+		</li>
+
+		<li class="nav-item">
+			<%#=link_to "Split Orders (premium)", user_products_path(current_user),class:"item-link"%>
+		</li>
+
+	</ul>		
+</div>

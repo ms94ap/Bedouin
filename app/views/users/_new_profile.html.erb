@@ -1,0 +1,113 @@
+ 
+<% if @user.errors.any? %>
+	<div id="error_explanation">
+		<h2>
+			<%= pluralize(@user.errors.count, "error") %>
+			prohibited this user from being saved:
+		</h2>
+
+		<ul>
+		<% @user.errors.full_messages.each do |msg| %>
+			<li class="li-container"><%= msg %></li>
+		<% end %>
+		</ul>
+	</div>
+<% end %>
+<%= form_for @user, html: {class: "comp-form"} do |f| %>
+	<div class="row">
+		<div class="split">
+			<div class="card-header">New User Info</div>
+				<ul>
+					<li class="li-container">
+						<%= f.label :prefix %> <br>
+						<%= f.text_field :prefix, class: "user-container" %>
+					</li>
+					<li class="li-container">
+						<%= f.label :first_name %> <br>
+						<%= f.text_field :first_name, class: "user-container" %>
+					</li>
+					<li class="li-container">
+						<%= f.label :last_name %> <br>
+						<%= f.text_field :last_name, class: "user-container" %>
+					</li>
+					<li class="li-container">
+						<%= f.label :Create_password %> <br>
+						<%= f.password_field :password, class: "user-container" %>
+					</li>
+					<li class="li-container">
+						<%= f.label :Confirm_password %> <br>
+						<%= f.password_field :password, class: "user-container" %>
+					</li>
+				</ul>
+		</div>
+		<div class="split">
+			<div class="card-header">Business & Contact Info</div>
+			<ul>
+				<li class="li-container">
+					<%= f.label :job_title %> <br>
+					<%= f.text_field :job_title, class: "user-container" %>
+				</li>
+				<li class="li-container">
+					<%= f.label :location %> <br>
+					<%= f.text_field :location, class: "user-container" %>
+				</li>
+						<li class="li-container-plain">
+					<%= f.label :tel %> <br>
+					<%= f.text_field :tel, class: "user-container" %>
+					<span class="li-span">
+					<%= f.label :ext %>
+					<%= f.text_field :ext, class:"span-input" %>
+					</span>
+						</li>
+				<li class="li-container-plain">
+					<%= f.label :fax %> <br>
+					<%= f.text_field :fax, class: "user-container" %>
+				</li>
+				<li class="li-container">
+					<%= f.label :business_email %> <br>
+					<%= f.text_field :business_email, class: "user-container" %>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<%# SWITCH TO SIMPLE FORM FOR TO GET CUSTOM CHECKBOXES %>
+
+	<div class="permissions">
+		<div class="card-header">Access & Permissions</div>
+		<ul>
+			<li class="li-header">Company
+				<div><input type="checkbox"> Edit Profile</div>
+			</li>
+			<li class="li-header">Business Cards
+					<div> <input type="checkbox"> Send </div>
+					<div> <input type="checkbox"> Delete </div>
+			</li>
+			<li class="li-header"> Pins
+					<div> <input type="checkbox"> Products & Companies</div>
+					<div> <input type="checkbox"> Delete</div>
+			</li>
+			<li class="li-header">Posts
+					<div> <input type="checkbox"> Create </div>
+					<div> <input type="checkbox"> Delete </div>
+			</li>
+			<li class="li-header">Products
+					<div> <input type="checkbox"> Create New</div>
+					<div> <input type="checkbox"> Delete</div>
+			</li>
+			<li class="li-header">RFQs
+					<div> <input type="checkbox"> Respond </div>
+					<div> <input type="checkbox"> Create </div>
+			</li>
+			<li class="li-header">Analytics
+				<div> <input type="checkbox"> Access </div>
+			</li>
+			<li class="li-header">Admin
+				<div><input type="checkbox"> Full Access</div>
+			</li>
+		</ul>
+	</div>
+	<div class="sub-new-user">
+		<%= f.submit "Create", class:"btn-save" %>
+	</div>
+<% end %>

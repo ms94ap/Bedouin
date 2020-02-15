@@ -1,0 +1,46 @@
+<div class="profiles-container">
+  <div class="current-users">
+    <div class="user-added">
+      <%= form_for @user, html: {style: "margin-top: 80px;"} do |f| %>
+				<ul>
+					<li class="profile-headers"><%= f.label :first_name%></li>
+					<li class="profile-headers"><%= f.label :last_name %></li>
+					<li class="profile-headers">Permissions & Access Rights</li>
+					<li class="profile-headers">Actions</li>
+				</ul>
+				<ul>
+					<li class="profiles-container">
+						<%= f.text_field :first_name, class: "input-form" %>
+					</li>
+					<li class="profiles-container">
+						<%= f.text_field :last_name, class: "input-form" %>
+					</li>
+					<li class="profiles-container">Admin</li>
+					<li class="profiles-container"><%=link_to "Edit"%></li>
+				</ul>
+				<%# TO BE DELETED %>
+				<ul>
+					<li class="profiles-container">
+						<%= f.text_field :first_name, class: "input-form" %>
+					</li>
+					<li class="profiles-container">
+						<%= f.text_field :last_name, class: "input-form" %>
+					</li>
+					<li class="profiles-container">User</li>
+					<li class="profiles-container"><%=link_to "Edit"%></li>
+					<li class="profiles-container"> <%=link_to "Delete" %></li>
+				</ul>
+	    <% end %>
+    </div>
+		<div>
+			<button>Create New User</button>
+		</div>
+		<div class="add-user"></div>
+
+		<div>If user is not premium, tabs will be shown but deactivated.Same with user if he is not admin</div>
+		<br>
+		
+		<div>if the user is admin he coudl see all tabs but not edit/delete the main user.</div>
+		<div>Make them contact bedouino to delete main admin?</div>
+  </div>
+</div>
