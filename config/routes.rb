@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :categories
+    resources :taxonomies
+    resources :taxons
   end
 
   resources :companies

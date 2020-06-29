@@ -30,6 +30,14 @@ class Admin::TaxonomiesController < ApplicationController
     end
   end
 
+  def update
+    if taxonomy.update(taxonomy_params)
+      respond_with(taxonomy, status: 200, default_template: :show)
+    else
+      invalid_resource!(taxonomy)
+    end
+  end
+
   def destroy
     @taxonomy = Taxonomy.friendly.find(params[:id])
     @taxonomy.destroy
